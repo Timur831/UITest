@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>билайн</title>
+    <link rel="stylesheet" type="text/css" href="/app/css/import.css">
+    <link rel="stylesheet" type="text/css" href="/app/css/jquery.mCustomScrollbar.css">
+    <link rel="icon" type="image/x-icon" href="/app/img/favicon.ico">
+    <script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script src="/app/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/app/js/jquery.mCustomScrollbar.min.js" type="text/javascript"></script><script src="https://identity.beeline.ru/app/js/jquery.mousewheel.min.js"></script>
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css"/>
+    <![endif]-->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+    <![endif]-->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(26001372, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer",
+            params: window.yaParams
+        });
+
+        ym(28573041, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer",
+            params: window.yaParams
+
+        });
+
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/26001372" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/28573041" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body style="display: block;">
+    <script src="/app/js/purl.js"></script>
+    <script id="modelJson" type="application/json">
+        {&quot;errorMessage&quot;:&quot;&#1053;&#1077;&#1087;&#1088;&#1077;&#1076;&#1074;&#1080;&#1076;&#1077;&#1085;&#1085;&#1072;&#1103; &#1086;&#1096;&#1080;&#1073;&#1082;&#1072;&quot;,&quot;requestId&quot;:&quot;02e5fc12-901e-4fef-ae5a-ab285e39cf5a&quot;,&quot;siteUrl&quot;:&quot;https://identity.beeline.ru/identity/&quot;,&quot;siteName&quot;:&quot;IdentityServer3&quot;,&quot;currentUser&quot;:null,&quot;logoutUrl&quot;:&quot;https://identity.beeline.ru/identity/logout&quot;}
+    </script>
+    <script>
+        $('body').hide();
+        if (window.location.pathname === "/identity/login") {
+            var message = jQuery.parseJSON($.trim($("#modelJson").html().replace(/&quot;/g, '"')));
+            errorMessage = $("<div/>").html(message.errorMessage).text();
+
+            if (errorMessage.indexOf("authError:") !== -1) {
+                var paramsObj = {
+                    signin: $.url().param('signin'),
+                    errorMessage: errorMessage
+                };
+
+                var params = $.param(paramsObj);
+
+                url = window.location.pathname + "?" + params;
+
+                window.location.replace(url);
+            } else {
+                $('body').show();
+            }
+        } else {
+            $('body').show();
+        }
+    </script>
+    <div class="wrap">
+        <div class="logotype">
+            <a class="logo" href="http://www.beeline.ru"></a>
+        </div>
+        <div class="content clearfix">
+            <div class="content-wrap">
+                <div class="inline-block" style="margin-left: 240px;">
+                    <h2>«Мой билайн» ошибка</h2>
+                    <div class="content-block page-not-available mtop30">
+                        <div class="yellow-box attention offic-regular-17 margin-22-bottom">
+                            <div class="valign-middle-cell">
+                                <span data-bind="text: identityModel().errorMessage">Непредвиденная ошибка</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- content -->
+        <div class="helper"></div>
+    </div><!-- wrap -->
+    <script src="/app/js/knockout-3.3.0.js"></script>
+    <script src="/app/js/misc.js" type="text/javascript"></script>
+    <script src="/app/js/error.js"></script>
+
+</body></html>
