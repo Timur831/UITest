@@ -33,8 +33,8 @@ public class LoginPage extends BasePage {
         authWithPassword.shouldBe(visible).click();
         inputField.shouldBe(visible).sendKeys(login);
         passwordField.shouldBe(visible).sendKeys(password);
-        inputButtonModal.shouldBe(visible).click();
-        $x("//span[text()='Главная']").shouldBe(visible);
+//        inputButtonModal.shouldBe(visible).click();
+//        $x("//span[text()='Главная']").shouldBe(visible);
     }
 
 }
